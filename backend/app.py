@@ -1,7 +1,9 @@
 from flask import Flask, Response
 import pandas as pd
+from flask_cors import CORS 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/table1", methods=['GET'])
 def Table1():
