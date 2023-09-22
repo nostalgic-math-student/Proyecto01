@@ -1,0 +1,27 @@
+[{
+    "id": 1,
+    "text": "Mexico City",
+    "iataCode": "MEX"
+}, {
+    "id": 2,
+    "text": "Monterrey",
+    "iataCode": "MTY"
+}, {
+    "id": 3,
+    "text": "Cancun",
+    "iataCode": "CUN"
+}, {
+    "id": 4,
+    "text": "Guadalajara",
+    "iataCode": "GDL"
+}, {
+    "id": 5,
+    "text": "San Luis Potosi",
+    "iataCode": "SLP"
+},
+ {
+    "id": 6,
+    "text": "Torreon",
+    "iataCode": "TRC"
+
+}] 
