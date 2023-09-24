@@ -25,6 +25,8 @@ Ejecuta Flask en consola mediante el comando `python -m flask run`
 
 Cambia a carpeta de `/frontend`
 
+Instala dependencias mediante `yarn`
+
 Ejecuta en una consola 
 
 ### `yarn start run`
