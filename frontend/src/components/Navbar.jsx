@@ -6,6 +6,14 @@ import { arbitrum, mainnet, polygon } from 'wagmi/chains'
 import WalletButton from './WalletButton';
 import { getAccount } from '@wagmi/core'
 
+/* 
+Navbar principal. 
+
+Se buscó generar una navbar donde el componente adicional al proyecto sería Integración Web3 + Boletos de avión.
+El usuario es capaz de conectar su cartera de criptomonedas mediante un botón localizado en la parte superior derecha
+La funcionalidad deseada sería conectar un ticket que el tenga a su cartera mediante algún contrato futuro, por ejemplo un NFT representativo.
+*/
+
 const Navbar = () => {
 
   const localUrl = process.env.REACT_APP_URL;

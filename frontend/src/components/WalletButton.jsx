@@ -3,6 +3,10 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { useAccount, useDisconnect, useBalance } from "wagmi";
 import { getAccount } from '@wagmi/core';
 
+/* 
+Implementación de botón para conectar con cartera cripto gracias a WalletConnect. 
+*/
+
 const WalletButton = ({ onWalletConnect }) => {
     const { open } = useWeb3Modal();
     const [loading, setLoading] = useState(false);

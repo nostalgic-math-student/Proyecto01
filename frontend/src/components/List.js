@@ -1,7 +1,13 @@
 import data from './ListData.json'
 import { React, useState, useEffect, useMemo } from 'react'
 
+
+/* 
+componente List que nos ayuda a generar la distancia entre palabras para predecir el texto buscado.
+NOTA: este componente no se terminó; hizo falta una API extra para buscar ciudad con IATA.
+*/
 function List(props) {
+
 
     // Implementacion extraida de https://masoudx.medium.com/sorting-words-by-similarity-in-typescript-a-guide-to-use-levenshtein-distance-algorithm-f6b4f3b57008
     const levenshteinDistance = (a, b) => {
@@ -71,6 +77,7 @@ function List(props) {
         return newData;
     }, [props.input]);
     
+
     const filteredData = sortedData.filter((event) => {
         if (props.input === '') {
             return true;
@@ -83,12 +90,18 @@ function List(props) {
         }
     }).slice(0,3)
     
-
+    const isDropdownVisible = props.input !== '' && filteredData.length > 0;
     return (
         <ul>
+
+            {isDropdownVisible && (
+                <ul className="dropdown">
             {filteredData.map((item, index) => (
                 <li key={item.id}>{item.text} ({item.iataCode})</li>
             ))}
+                </ul>
+            )}
+            
         </ul>
     )
 }
