@@ -46,8 +46,8 @@ function Search() {
       {Error && (<a> Please provide a valid ticket ID
       </a>)}
       {ActiveTicket && (<div className='carousel'>
-      <Stats weather={Ticket.o_weather} name={Ticket.origin}/>
-      <Stats weather={Ticket.d_weather} name={Ticket.destination}/>
+      <Stats weather={Ticket.o_weather} name={Ticket.origin} where={"Origin"}/>
+      <Stats weather={Ticket.d_weather} name={Ticket.destination} where={"Destination"}/>
       </div>
       )
       }
