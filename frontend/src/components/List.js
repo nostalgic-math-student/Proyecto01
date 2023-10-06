@@ -93,11 +93,12 @@ function List(props) {
     const isDropdownVisible = props.input !== '' && filteredData.length > 0;
     return (
         <ul>
-
             {isDropdownVisible && (
                 <ul className="dropdown">
+                    {/* Agregar funcion de ver datos de la ciudad */}
             {filteredData.map((item, index) => (
-                <li key={item.id}>{item.text} ({item.iataCode})</li>
+                <li className='btn btn-active btn-accent' key={item.id}>{item.text} ({item.iataCode})</li>
+                
             ))}
                 </ul>
             )}

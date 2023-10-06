@@ -11,15 +11,9 @@ from Modelo import modelo
 Llamamos al modelo generado para calcular de forma eficiente las temperaturas de la base de datos. 
 Ejecutamos flask y los métodos siguientes son auxiliares en el Frontend.
 """
-model, cacheClima = modelo('dataset2.csv')
+model, cacheClima, cacheInformacion = modelo('dataset2.csv')
 app = Flask(__name__)
 CORS(app)
-
-# Regresa primer dataset en forma de JSON
-@app.route("/table1", methods=['GET'])
-def Table1():
-    table_data = pd.read_csv('dataset1.csv')
-    return Response(table_data.to_json(), mimetype='application/json')
 
 # Regresa segundo dataset en forma de JSON
 @app.route("/table2", methods=['GET'])
@@ -37,6 +31,8 @@ def ClimaTicket():
         destination = ticket_info[1]
         origin_weather = ticket_info[6]
         destination_weather = ticket_info[7]
+        
+        ### Agregar más datos extraidos de API
         response = {
             "origin":f"{origin}",
             "destination":f"{destination}",
@@ -50,8 +46,10 @@ def ClimaTicket():
 @app.route("/climaPorCiudad", methods=['GET'])
 def ClimaPorCiudad():
     IATA = request.args.get('IATA')
-    temp_city = cacheClima[IATA]
+    temp_city = cacheClima[IATA]['clima']
+
     response = {
+        ### Agregar más datos de la ciudad
         "Temp":f"{temp_city}"
     }
     return jsonify(response),200

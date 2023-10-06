@@ -13,18 +13,20 @@ let inputHandler = (event) => {
 
 
   return (
-<div className="md:container mx-auto space-y-16">
-<div className="form-control margi">
-    <Search/>
-    </div>
-<div className='mockup-window border bg-base-300'>
-  <h1>Alert! Still in development</h1>
-  <h1>Search temperature by city (search your city!)</h1>
-       <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" value={queryInput.toLowerCase()} onChange={inputHandler}/>
-      <List input={queryInput}></List>
-</div>
+    <div className="md:container mx-auto space-y-16 ">
+      <div className="form-control margi">
+        <Search />
+      </div>
 
-</div>
+
+      <div className='mockup-window border bg-base-300 space-y-4'>
+        <h1>Alert! Still in development</h1>
+        <h1>Search temperature by city (search your city!)</h1>
+        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" value={queryInput.toLowerCase()} onChange={inputHandler} />
+        <List input={queryInput}></List>
+      </div>
+
+    </div>
   )
 }
 
