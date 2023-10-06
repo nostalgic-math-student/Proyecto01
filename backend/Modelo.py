@@ -1,5 +1,6 @@
 import csv
 import requests
+import json
 
 keyWeather = "891f3e081e3ffc2373bab6f7008f2903"
 
@@ -13,8 +14,13 @@ def consulta_clima(lat, long):
         lat, long, keyWeather)
     res = requests.get(url)
     datos = res.json()
+
     temp = datos["main"]["temp"]
-    return temp
+    presion = datos["main"]["pressure"]
+    humedad = datos["main"]["humidity"]
+    clima = datos["weather"][0]["main"]
+
+    return temp, presion, humedad, clima
 
 
 ticketsDic = {}
@@ -41,20 +47,29 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
     """
     clima1 = 0
     clima2 = 0
+    pres1 = 0
+    pres2 = 0
+    hum1 = 0
+    hum2 = 0
+    temp1 = 0
+    temp2 = 0
     if (iataOg in cacheClima):
-        clima1 = cacheClima[iataOg]
+        lista1 = cacheClima[iataOg]
+        temp1, pres1, hum1, clima1 = lista1[0], lista1[1], lista1[2], lista1[3]
     else:
-        clima1 = consulta_clima(latOg, lonOg)
-        cacheClima[iataOg] = clima1
+
+        temp1, pres1, hum1, clima1 = consulta_clima(latOg, lonOg)
+        cacheClima[iataOg] = [temp1, pres1, hum1, clima1]
 
     if (iataDes in cacheClima):
-        clima2 = cacheClima[iataDes]
+        list2 = cacheClima[iataDes]
+        temp2, pres2, hum2, clima2 = list2[0], list2[1], list2[2], list2[3]
     else:
-        clima2 = consulta_clima(latOg, lonOg)
-        cacheClima[iataDes] = clima2
+        temp2, pres2, hum2, clima2 = consulta_clima(latDes, lonDes)
+        cacheClima[iataDes] = [temp2, pres2, hum2, clima2]
 
     ticketsDic[ticket] = [iataOg, iataDes, latOg,
-                          lonOg, latDes, lonDes, clima1, clima2]
+                          lonOg, latDes, lonDes, temp1, temp2, pres1, pres2, hum1, hum2, clima1, clima2]
 
 
 def modelo(dataset2):
