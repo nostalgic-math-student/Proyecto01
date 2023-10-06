@@ -1,27 +1,257 @@
-[{
-    "id": 1,
-    "text": "Mexico City",
-    "iataCode": "MEX"
-}, {
-    "id": 2,
-    "text": "Monterrey",
-    "iataCode": "MTY"
-}, {
-    "id": 3,
-    "text": "Cancun",
-    "iataCode": "CUN"
-}, {
-    "id": 4,
-    "text": "Guadalajara",
-    "iataCode": "GDL"
-}, {
-    "id": 5,
-    "text": "San Luis Potosi",
-    "iataCode": "SLP"
-},
- {
-    "id": 6,
-    "text": "Torreon",
-    "iataCode": "TRC"
-
-}] 
+[
+    {
+        "id": 1,
+        "text": "Monterrey",
+        "iataCode": "MTY"
+    },
+    {
+        "id": 2,
+        "text": "Ciudad De México",
+        "iataCode": "MEX"
+    },
+    {
+        "id": 3,
+        "text": "Tampico",
+        "iataCode": "TAM"
+    },
+    {
+        "id": 4,
+        "text": "Guadalajara",
+        "iataCode": "GDL"
+    },
+    {
+        "id": 5,
+        "text": "Ciudad Juárez",
+        "iataCode": "CJS"
+    },
+    {
+        "id": 6,
+        "text": "Cancún",
+        "iataCode": "CUN"
+    },
+    {
+        "id": 7,
+        "text": "Tijuana",
+        "iataCode": "TIJ"
+    },
+    {
+        "id": 8,
+        "text": "Hermosillo",
+        "iataCode": "HMO"
+    },
+    {
+        "id": 9,
+        "text": "Ciudad del Carmen",
+        "iataCode": "CME"
+    },
+    {
+        "id": 10,
+        "text": "Mérida",
+        "iataCode": "MID"
+    },
+    {
+        "id": 11,
+        "text": "Chetumal",
+        "iataCode": "CTM"
+    },
+    {
+        "id": 12,
+        "text": "Veracruz",
+        "iataCode": "VER"
+    },
+    {
+        "id": 13,
+        "text": "Oaxaca",
+        "iataCode": "OAX"
+    },
+    {
+        "id": 14,
+        "text": "Bahías de Huatulco",
+        "iataCode": "HUX"
+    },
+    {
+        "id": 15,
+        "text": "Ixtapa-Zihuatanejo",
+        "iataCode": "ZIH"
+    },
+    {
+        "id": 16,
+        "text": "Puerto Vallarta",
+        "iataCode": "PVR"
+    },
+    {
+        "id": 17,
+        "text": "Lima",
+        "iataCode": "LIM"
+    },
+    {
+        "id": 18,
+        "text": "La Habana",
+        "iataCode": "HAV"
+    },
+    {
+        "id": 19,
+        "text": "Bogotá",
+        "iataCode": "BOG"
+    },
+    {
+        "id": 20,
+        "text": "Miami",
+        "iataCode": "MIA"
+    },
+    {
+        "id": 21,
+        "text": "Los Ángeles",
+        "iataCode": "LAX"
+    },
+    {
+        "id": 22,
+        "text": "Nueva York",
+        "iataCode": "JFK"
+    },
+    {
+        "id": 23,
+        "text": "Torreón",
+        "iataCode": "TRC"
+    },
+    {
+        "id": 24,
+        "text": "Puerto Escondido",
+        "iataCode": "PXM"
+    },
+    {
+        "id": 25,
+        "text": "Acapulco",
+        "iataCode": "ACA"
+    },
+    {
+        "id": 26,
+        "text": "Mazatlán",
+        "iataCode": "MZT"
+    },
+    {
+        "id": 27,
+        "text": "Guatemala",
+        "iataCode": "GUA"
+    },
+    {
+        "id": 28,
+        "text": "Aguascalientes",
+        "iataCode": "AGU"
+    },
+    {
+        "id": 29,
+        "text": "Villahermosa",
+        "iataCode": "VSA"
+    },
+    {
+        "id": 30,
+        "text": "Belice",
+        "iataCode": "BZE"
+    },
+    {
+        "id": 31,
+        "text": "Dallas-Fort Worth",
+        "iataCode": "DFW"
+    },
+    {
+        "id": 32,
+        "text": "Cozumel",
+        "iataCode": "CZM"
+    },
+    {
+        "id": 33,
+        "text": "Chicago",
+        "iataCode": "ORD"
+    },
+    {
+        "id": 34,
+        "text": "Phoenix-Sky Harbor",
+        "iataCode": "PHX"
+    },
+    {
+        "id": 35,
+        "text": "Chihuahua",
+        "iataCode": "CUU"
+    },
+    {
+        "id": 36,
+        "text": "Querétaro",
+        "iataCode": "QRO"
+    },
+    {
+        "id": 37,
+        "text": "Bajío",
+        "iataCode": "BJX"
+    },
+    {
+        "id": 38,
+        "text": "Puebla",
+        "iataCode": "PBC"
+    },
+    {
+        "id": 39,
+        "text": "Philadelphia",
+        "iataCode": "PHL"
+    },
+    {
+        "id": 40,
+        "text": "San Luis Potosí",
+        "iataCode": "SLP"
+    },
+    {
+        "id": 41,
+        "text": "Carolina del Norte",
+        "iataCode": "CLT"
+    },
+    {
+        "id": 42,
+        "text": "Toronto Pearson",
+        "iataCode": "YYZ"
+    },
+    {
+        "id": 43,
+        "text": "Houston",
+        "iataCode": "IAH"
+    },
+    {
+        "id": 44,
+        "text": "Vancouver",
+        "iataCode": "YVR"
+    },
+    {
+        "id": 45,
+        "text": "París",
+        "iataCode": "CDG"
+    },
+    {
+        "id": 46,
+        "text": "Zacatecas",
+        "iataCode": "ZCL"
+    },
+    {
+        "id": 47,
+        "text": "Ámsterdam",
+        "iataCode": "AMS"
+    },
+    {
+        "id": 48,
+        "text": "Atlanta",
+        "iataCode": "ATL"
+    },
+    {
+        "id": 49,
+        "text": "Ciudad Obregón",
+        "iataCode": "CEN"
+    },
+    {
+        "id": 50,
+        "text": "Madrid-Barajas",
+        "iataCode": "MAD"
+    },
+    {
+        "id": 51,
+        "text": "Santiago De Chile",
+        "iataCode": "SCL"
+    }
+]
