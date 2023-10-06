@@ -41,9 +41,9 @@ function Search() {
 
   return (
     <div>
-      <h2>Check your Flight Weather here! </h2>
+      <h2>¡Consulta el clima de tu vuelo aquí!</h2>
       <InputComponent onExecute={handleExecute} />
-      {Error && (<a> Please provide a valid ticket ID
+      {Error && (<a> Porfavor intruduce un ticket valido
       </a>)}
       {ActiveTicket && (<div className='carousel'>
       <Stats weather={Ticket.o_weather} name={Ticket.origin} where={"Origin"}/>
