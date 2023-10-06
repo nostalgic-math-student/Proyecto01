@@ -1,6 +1,5 @@
 import csv
 import requests
-import json
 
 keyWeather = "891f3e081e3ffc2373bab6f7008f2903"
 
