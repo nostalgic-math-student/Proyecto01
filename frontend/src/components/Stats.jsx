@@ -16,8 +16,7 @@ const Stats = ({ weather, name, where }) => {
             <div className="card w-96 bg-base-100 shadow-xl center">
                 <div className="card-body">
 
-                    <h2 className="card-title">Temperature in {where}: {}</h2>
-                    name
+                    <h2 className="card-title">Temperature in {where}: {name}</h2>
                     <p> {weather} C° <img
                         src={getWeatherImage(weather)}
                         alt="Description of the image"
