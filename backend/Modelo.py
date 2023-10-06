@@ -2,13 +2,23 @@ import csv
 import requests
 import json
 
+# Clave de API de OpenWeatherMap
 keyWeather = "891f3e081e3ffc2373bab6f7008f2903"
 
 
 def consulta_clima(lat, long):
     """
-    Dada una latitud y longitud devuelve la temperatura
-    actual de dicha ubicación, en grados centígrados
+    Dada una latitud y longitud, devuelve la temperatura
+    actual de dicha ubicación en grados centígrados, así como
+    la presión, humedad y condiciones climáticas.
+
+    Args:
+        lat (float): Latitud de la ubicación.
+        long (float): Longitud de la ubicación.
+
+    Returns:
+        tuple: Una tupla con la temperatura (en grados Celsius),
+               presión (en hPa), humedad (en %) y condiciones climáticas.
     """
     url = 'http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}&units=metric'.format(
         lat, long, keyWeather)
@@ -45,6 +55,7 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
         Este método regresa la misma información del ticket y dos datos más,
         los cuales son el clima de origen del vuelvo y el clima de destino del vuelo.
     """
+
     clima1 = 0
     clima2 = 0
     pres1 = 0
@@ -74,10 +85,18 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
 
 def modelo(dataset2):
     """
-    Procesa un datos de un archivo CSV y regresa un diccionario con los mismos datos
-    mas dos entradas extra, el clima de origen y el clima de destino.
-    """
+    Procesa un conjunto de datos de un archivo CSV y regresa un diccionario
+    con los mismos datos y dos entradas adicionales que son el clima de origen
+    y el clima de destino para cada ticket de vuelo.
 
+    Args:
+        dataset2 (str): La ruta al archivo CSV que contiene los datos.
+
+    Returns:
+        tuple: Una tupla que contiene dos diccionarios, el primero con los datos
+               de los tickets de vuelo y el segundo con los datos de clima cacheados.
+    """
+    
     with open(dataset2, 'r') as base_csv:
         lector_base = csv.reader(base_csv)
         # función para saltarnos la primera fila del csv
