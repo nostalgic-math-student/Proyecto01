@@ -1,8 +1,5 @@
 import csv
 import requests
-import os
-import json
-import time
 
 keyWeather = "891f3e081e3ffc2373bab6f7008f2903"
 
@@ -42,8 +39,6 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
         Este método regresa la misma información del ticket y dos datos más,
         los cuales son el clima de origen del vuelvo y el clima de destino del vuelo.
     """
-    if len(cacheClima) == 48:
-        time.sleep(60)
     clima1 = 0
     clima2 = 0
     if (iataOg in cacheClima):
