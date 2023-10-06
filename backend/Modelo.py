@@ -17,9 +17,9 @@ def consulta_clima(lat, long):
     temp = datos["main"]["temp"]
     presion = datos["main"]["pressure"]
     humedad = datos["main"]["humidity"]
-    clima = datos["weather"][0]["main"]
+    nubosidad = datos["weather"][0]["main"]
 
-    return temp, presion, humedad, clima
+    return temp, presion, humedad, nubosidad
 
 
 ticketsDic = {}
@@ -50,25 +50,25 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
     pres2 = 0
     hum1 = 0
     hum2 = 0
-    temp1 = 0
-    temp2 = 0
+    nub1 = 0
+    nub2 = 0
     if (iataOg in cacheClima):
         lista1 = cacheClima[iataOg]
-        temp1, pres1, hum1, clima1 = lista1[0], lista1[1], lista1[2], lista1[3]
+        clima1, pres1, hum1, nub1 = lista1[0], lista1[1], lista1[2], lista1[3]
     else:
 
-        temp1, pres1, hum1, clima1 = consulta_clima(latOg, lonOg)
-        cacheClima[iataOg] = [temp1, pres1, hum1, clima1]
+        clima1, pres1, hum1, nub1 = consulta_clima(latOg, lonOg)
+        cacheClima[iataOg] = [clima1, pres1, hum1, nub1]
 
     if (iataDes in cacheClima):
         list2 = cacheClima[iataDes]
-        temp2, pres2, hum2, clima2 = list2[0], list2[1], list2[2], list2[3]
+        clima2, pres2, hum2, nub2 = list2[0], list2[1], list2[2], list2[3]
     else:
-        temp2, pres2, hum2, clima2 = consulta_clima(latDes, lonDes)
-        cacheClima[iataDes] = [temp2, pres2, hum2, clima2]
+        clima2, pres2, hum2, nub2 = consulta_clima(latDes, lonDes)
+        cacheClima[iataDes] = [clima2, pres2, hum2, nub2]
 
     ticketsDic[ticket] = [iataOg, iataDes, latOg,
-                          lonOg, latDes, lonDes, temp1, temp2, pres1, pres2, hum1, hum2, clima1, clima2]
+                          lonOg, latDes, lonDes, clima1, clima2, pres1, pres2, hum1, hum2, nub1, nub2]
 
 
 def modelo(dataset2):
@@ -84,5 +84,4 @@ def modelo(dataset2):
         for linea in lector_base:
             procesaTicket(linea[0], linea[1], linea[2],
                           linea[3], linea[4], linea[5], linea[6])
-        print("Procesado de ticket finalizado")
     return ticketsDic, cacheClima
