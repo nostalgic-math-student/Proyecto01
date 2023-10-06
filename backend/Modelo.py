@@ -4,7 +4,7 @@ import os
 import json
 import time
 
-keyWeather = "891f3e081e3ffc2373bab6f7008f2903"
+keyWeather = "c7b58bdb97bc8a57b34ca05403843218"
 
 
 def consulta_clima(lat, long):

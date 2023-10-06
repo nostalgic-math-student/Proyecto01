@@ -10,7 +10,7 @@ const Stats = ({ weather, name, where }) => {
 
             <div className="card w-96 bg-base-100 shadow-xl center">
                 <div className="card-body">
-                    <h2 className="card-title">Temperature in:{where}: {name}</h2>
+                    <h2 className="card-title">Temperature in {where}: {name}</h2>
                     <p> {weather} C° {(weather > 24) && (<img
                         src="https://static.vecteezy.com/system/resources/previews/002/687/486/original/weather-summer-sun-hot-temperature-icon-isolated-image-free-vector.jpg"
                         alt="Description of the image"
