@@ -1,8 +1,20 @@
 import React from 'react'
 
-/* 
-Componente ilustrativo de la temperatura, toma imagenes de termómetros para la temperatura dada
-*/
+/**
+ * Componente `Stats` que muestra imagenes de la temperatura.
+ * 
+ * Este componente ilustra información relacionada con la temperatura, incluyendo una imagen
+ * de termómetros para la temperatura dada.
+ * 
+ * @param {object} props - Las propiedades del componente.
+ * @param {string} props.weather - El estado climático actual.
+ * @param {string} props.name - El nombre de la ubicación.
+ * @param {string} props.location - La ubicación (Origen o Destino).
+ * @param {number} props.humidity - La humedad actual.
+ * @param {number} props.pressure - La presión atmosférica actual.
+ * @param {number} props.temperature - La temperatura actual en grados Celsius.
+ * @returns {JSX.Element} El componente de React que muestra información ilustrativa de la temperatura.
+ */
 const Stats = ({ weather, name, location, humidity, pressure,temperature  }) => {
 
     const getWeatherImage = (weather) => {

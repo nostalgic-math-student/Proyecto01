@@ -2,10 +2,26 @@ import React, { useState } from 'react'
 import List from './List.js'
 import Search from './Search.jsx';
 
+/**
+ * Componente principal para la búsqueda de vuelos y consulta de temperatura.
+ * 
+ * Este componente contiene la funcionalidad principal de la aplicación.
+ * Permite al usuario buscar vuelos y consultar la temperatura por ciudad.
+ * 
+ */
 const Flights = () => {
 
+  // Estado local para almacenar la consulta de búsqueda.
   const [queryInput, setQueryInput] = useState("");
 
+/**
+  * Manejador de eventos para la entrada de búsqueda.
+  * 
+  * Esta función se llama cuando el usuario ingresa texto en el campo de búsqueda.
+  * Actualiza el estado con el valor en minúsculas del texto de búsqueda.
+  * 
+  * @param {object} event - El evento de cambio de entrada.
+  */
 let inputHandler = (event) => {
   var lowerCase = event.target.value;
   setQueryInput(lowerCase);

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+/**
+ * Componente `Table` que muestra una tabla de datos de vuelos.
+ * 
+ * @returns {JSX.Element} El componente de React que representa la tabla de datos.
+ */
 const Table = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,6 +15,7 @@ const Table = () => {
   const [Destinations, setDestinations] = useState([]);
   
   useEffect(() => {
+    // Realiza una solicitud HTTP para obtener los datos de la tabla.
     fetch("http://127.0.0.1:5000/table2")
       .then((response) => response.json())
       .then((data) => {
@@ -27,7 +33,7 @@ const Table = () => {
     }, []);
     
     
-    
+    // Mapea los datos de la tabla para su representación.
     const tableData = tickets.map((value, index) => {
       return {
         ticket: value,
