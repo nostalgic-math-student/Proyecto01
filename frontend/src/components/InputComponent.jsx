@@ -20,9 +20,9 @@ function InputComponent(props) {
         type="text"
         value={inputValue}
         onChange={handleChange}
-        placeholder="Ingresa tu ticket"
+        placeholder="Enter your Ticket ID"
       />
-      <button className='btn btn-active btn-accent' onClick={handleButtonClick}>Ejecutar</button>
+      <button className='btn btn-active btn-accent' onClick={handleButtonClick}>Execute</button>
     </div>
   );
 }
