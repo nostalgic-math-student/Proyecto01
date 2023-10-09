@@ -52,8 +52,8 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
         lonDes (float): Longitud del aeropuerto de destino.
 
     Descripción:
-        Este método regresa la misma información del ticket y dos datos más,
-        los cuales son el clima de origen del vuelvo y el clima de destino del vuelo.
+        Llena un diccionario con tickets como llave y en valor los datos de los tickets de vuelo mas los datos de clima de origen y destino.
+        clima, presión, humedad y nubosidad (origen y destino).
     """
     clima1 = 0
     clima2 = 0
@@ -85,7 +85,7 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
 def modelo(dataset2):
     """
     Procesa un conjunto de datos de un archivo CSV y regresa un diccionario
-    con los mismos datos y dos entradas adicionales que son el clima de origen
+    con los mismos datos y 8 entradas adicionales que son información del clima de origen
     y el clima de destino para cada ticket de vuelo.
 
     Args:
@@ -95,7 +95,7 @@ def modelo(dataset2):
         tuple: Una tupla que contiene dos diccionarios, el primero con los datos
                de los tickets de vuelo y el segundo con los datos de clima cacheados.
     """
-    
+
     with open(dataset2, 'r') as base_csv:
         lector_base = csv.reader(base_csv)
         # función para saltarnos la primera fila del csv
