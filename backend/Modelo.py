@@ -1,6 +1,9 @@
 import csv
 import requests
+<<<<<<< HEAD
 import json
+=======
+>>>>>>> 546c38a6e253e8b6a6ebdef6de38c0dfed1b259d
 
 # Clave de API de OpenWeatherMap
 keyWeather = "891f3e081e3ffc2373bab6f7008f2903"
@@ -28,9 +31,15 @@ def consulta_clima(lat, long):
     temp = datos["main"]["temp"]
     presion = datos["main"]["pressure"]
     humedad = datos["main"]["humidity"]
+<<<<<<< HEAD
     clima = datos["weather"][0]["main"]
 
     return temp, presion, humedad, clima
+=======
+    nubosidad = datos["weather"][0]["main"]
+
+    return temp, presion, humedad, nubosidad
+>>>>>>> 546c38a6e253e8b6a6ebdef6de38c0dfed1b259d
 
 
 ticketsDic = {}
@@ -55,13 +64,17 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
         Este método regresa la misma información del ticket y dos datos más,
         los cuales son el clima de origen del vuelvo y el clima de destino del vuelo.
     """
+<<<<<<< HEAD
 
+=======
+>>>>>>> 546c38a6e253e8b6a6ebdef6de38c0dfed1b259d
     clima1 = 0
     clima2 = 0
     pres1 = 0
     pres2 = 0
     hum1 = 0
     hum2 = 0
+<<<<<<< HEAD
     temp1 = 0
     temp2 = 0
     if (iataOg in cacheClima):
@@ -81,6 +94,27 @@ def procesaTicket(ticket, iataOg, iataDes, latOg, lonOg, latDes, lonDes):
 
     ticketsDic[ticket] = [iataOg, iataDes, latOg,
                           lonOg, latDes, lonDes, temp1, temp2, pres1, pres2, hum1, hum2, clima1, clima2]
+=======
+    nub1 = 0
+    nub2 = 0
+    if (iataOg in cacheClima):
+        lista1 = cacheClima[iataOg]
+        clima1, pres1, hum1, nub1 = lista1[0], lista1[1], lista1[2], lista1[3]
+    else:
+
+        clima1, pres1, hum1, nub1 = consulta_clima(latOg, lonOg)
+        cacheClima[iataOg] = [clima1, pres1, hum1, nub1]
+
+    if (iataDes in cacheClima):
+        list2 = cacheClima[iataDes]
+        clima2, pres2, hum2, nub2 = list2[0], list2[1], list2[2], list2[3]
+    else:
+        clima2, pres2, hum2, nub2 = consulta_clima(latDes, lonDes)
+        cacheClima[iataDes] = [clima2, pres2, hum2, nub2]
+
+    ticketsDic[ticket] = [iataOg, iataDes, latOg,
+                          lonOg, latDes, lonDes, clima1, clima2, pres1, pres2, hum1, hum2, nub1, nub2]
+>>>>>>> 546c38a6e253e8b6a6ebdef6de38c0dfed1b259d
 
 
 def modelo(dataset2):
@@ -104,5 +138,4 @@ def modelo(dataset2):
         for linea in lector_base:
             procesaTicket(linea[0], linea[1], linea[2],
                           linea[3], linea[4], linea[5], linea[6])
-        print("Procesado de ticket finalizado")
     return ticketsDic, cacheClima

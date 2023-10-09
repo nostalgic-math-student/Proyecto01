@@ -46,8 +46,8 @@ function Search() {
       {Error && (<a> Porfavor intruduce un ticket valido
       </a>)}
       {ActiveTicket && (<div className='carousel'>
-      <Stats weather={Ticket.o_weather} name={Ticket.origin} where={"Origin"}/>
-      <Stats weather={Ticket.d_weather} name={Ticket.destination} where={"Destination"}/>
+      <Stats temperature={Ticket.o_weather} name={Ticket.origin} location={"Origin"} humidity={Ticket.o_humidity} pressure={Ticket.o_pression} weather={Ticket.o_nubosity} />
+      <Stats temperature={Ticket.d_weather} name={Ticket.destination} location={"Destination"} humidity={Ticket.d_humidity} pressure={Ticket.d_pression} weather={Ticket.d_nubosity} />
       </div>
       )
       }

@@ -93,12 +93,22 @@ function List(props) {
 
     return (
         <ul>
+<<<<<<< HEAD
             
             {isDropdownVisible && (
                 <ul className="dropdown">
                     {filteredData.map((item, index) => (
                         <li key={item.id}>{item.text} ({item.iataCode})</li>
                     ))}
+=======
+            {isDropdownVisible && (
+                <ul className="dropdown">
+                    {/* Agregar funcion de ver datos de la ciudad */}
+            {filteredData.map((item, index) => (
+                <li className='btn btn-active btn-accent' key={item.id}>{item.text} ({item.iataCode})</li>
+                
+            ))}
+>>>>>>> 546c38a6e253e8b6a6ebdef6de38c0dfed1b259d
                 </ul>
             )}
 
