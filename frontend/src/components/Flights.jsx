@@ -7,7 +7,8 @@ import Search from './Search.jsx';
  * 
  * Este componente contiene la funcionalidad principal de la aplicación.
  * Permite al usuario buscar vuelos y consultar la temperatura por ciudad.
- * 
+ * @returns {JSX.Element} El componente de React que representa la página principal de la aplicación.
+ *
  */
 const Flights = () => {
 
