@@ -60,7 +60,6 @@ def ClimaTicket():
 
 # Regresa temperatura específica mediante IATA
 
-
 @app.route("/climaPorCiudad", methods=['GET'])
 def ClimaPorCiudad():
     IATA = request.args.get('IATA')
