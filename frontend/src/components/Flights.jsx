@@ -19,12 +19,11 @@ let inputHandler = (event) => {
       </div>
 
 
-      <div className='mockup-window border bg-base-300 space-y-4'>
-        <h1>Alert! Still in development</h1>
+      <div className='mockup-window border bg-base-300 space-y-4 mx-auto'>
         <h1>Search temperature by city (search your city!)</h1>
-        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" value={queryInput.toLowerCase()} onChange={inputHandler} />
-        <List input={queryInput}></List>
+        <input id='climaIata' type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" value={queryInput.toLowerCase()} onChange={inputHandler} />
       </div>
+        <List input={queryInput}></List>
 
     </div>
   )

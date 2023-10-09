@@ -1,5 +1,6 @@
 import data from './ListData.json'
 import { React, useState, useEffect, useMemo } from 'react'
+import Stats from './Stats';
 
 
 /* 
@@ -91,19 +92,62 @@ function List(props) {
     }).slice(0,3)
     
     const isDropdownVisible = props.input !== '' && filteredData.length > 0;
+
+    // onClick para buscar por lugar
+    const [placeWeather, setPlaceWeather] = useState({});
+    const [activePlaceWeather, setActivePlaceWeather] = useState(false);
+    const [Error, setError] = useState(false);
+    const [place, setPlace] = useState("");
+
+    const getIataWeather = (iata_place) => {
+        const apiUrl = `http://127.0.0.1:5000/climaPorCiudad?IATA=${iata_place}`;
+        fetch(apiUrl).then(
+          response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          }).then(
+            data => {
+              setPlaceWeather(data);
+              setError(false)
+              setActivePlaceWeather(true)
+            }
+          ).catch((error) => {
+            console.error("Error fetching data:", error);
+            setError(true);
+            setActivePlaceWeather(false)
+          })
+        
+
+          console.log(placeWeather)
+    }
+    
+
+
     return (
+        <>
         <ul>
             {isDropdownVisible && (
                 <ul className="dropdown">
                     {/* Agregar funcion de ver datos de la ciudad */}
             {filteredData.map((item, index) => (
-                <li className='btn btn-active btn-accent' key={item.id}>{item.text} ({item.iataCode})</li>
+                <li className='btn btn-active btn-accent' key={item.id} onClick={() => 
+                    {getIataWeather(item.iataCode);
+                        setPlace(item.text)
+                }
                 
-            ))}
+                
+                }>{item.text} ({item.iataCode})</li>
+                ))}
                 </ul>
             )}
             
         </ul>
+        { activePlaceWeather && 
+        (<Stats temperature={placeWeather.Temp} name={place} humidity={placeWeather.Hum} pressure={placeWeather.Pres} weather={placeWeather.Nub} />)
+        }
+            </>
     )
 }
 

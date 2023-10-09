@@ -10,7 +10,6 @@ const Stats = ({ weather, name, location, humidity, pressure,temperature  }) => 
     }
     return (
         <div className='carousel-item'>
-
             <div className="card w-96 bg-base-100 shadow-xl center">
                 <div className="card-body mx-auto">
 

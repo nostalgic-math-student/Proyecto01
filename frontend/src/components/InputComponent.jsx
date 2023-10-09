@@ -16,7 +16,7 @@ function InputComponent(props) {
 
   return (
     <div>
-      <input className='input input-bordered w-24 md:w-auto'
+      <input id='climaTicket' className='input input-bordered w-24 md:w-auto'
         type="text"
         value={inputValue}
         onChange={handleChange}
